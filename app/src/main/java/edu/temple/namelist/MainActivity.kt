@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         val nameTextView = findViewById<TextView>(R.id.textView)
 
         with (spinner) {
-            adapter = CustomAdapter(names, this@MainActivity)
-            onItemSelectedListener = object: OnItemSelectedListener {
+            this.adapter = CustomAdapter(names, this@MainActivity)
+            this.onItemSelectedListener = object: OnItemSelectedListener {
                 override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                     p0?.run {
                         nameTextView.text = getItemAtPosition(p2).toString()
